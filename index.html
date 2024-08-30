@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ListUp</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="loading.css">
+</head>
+<body>
+    <div id="particles-js"></div> <!-- Adiciona o fundo de partículas -->
+
+    <div class="loading-overlay" id="loading-overlay">
+        <div id="load">
+            <div>G</div>
+            <div>N</div>
+            <div>I</div>
+            <div>D</div>
+            <div>A</div>
+            <div>O</div>
+            <div>L</div>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <header>
+            <div class="logo-container">
+                <img src="logo_app_mercado2.fw.png" alt="Logo Marca" class="logo" id="logo">
+                <h1>Lista de Compras</h1>
+            </div>
+            <input type="text" id="new-item-input" placeholder="Adicione um novo item...">
+            <input type="number" id="new-item-price" placeholder="Preço do item" min="0" step="0.01">
+            <button id="add-item-btn">+</button>
+        </header>
+
+        <main>
+            <ul id="shopping-list" class="shopping-list"></ul>
+            <div id="total-container">
+                <h3>Total: R$ <span id="total-price">0,00</span></h3>
+            </div>
+        </main>
+    </div>
+
+    <script src="listup.js"></script>
+    <script src="particles.js-master/particles.js-master/particles.min.js"></script> <!-- Adiciona a biblioteca de partículas -->
+    <script src="particles.js-master/particles.js-master/demo/js/app.js"></script> <!-- Configuração das partículas -->
+</body>
+</html>
