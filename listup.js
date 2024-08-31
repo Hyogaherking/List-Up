@@ -79,14 +79,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
         deleteButton.addEventListener("click", function() {
             const selectedItems = document.querySelectorAll(".item-checkbox:checked");
-            selectedItems.forEach(checkbox => {
-                const selectedItem = checkbox.parentElement;
-                const quantity = parseInt(selectedItem.querySelector(".quantity").textContent);
-                const price = parseFloat(selectedItem.querySelector("span:nth-child(3)").textContent.replace("R$ ", ""));
-                const totalItemPrice = price * quantity;
+
+            if (selectedItems.length > 0) {
+                // Se houver itens selecionados, remova todos eles
+                selectedItems.forEach(checkbox => {
+                    const selectedItem = checkbox.parentElement;
+                    const quantity = parseInt(selectedItem.querySelector(".quantity").textContent);
+                    const price = parseFloat(selectedItem.querySelector("span:nth-child(3)").textContent.replace("R$ ", ""));
+                    const totalItemPrice = price * quantity;
+                    updateTotal(-totalItemPrice);
+                    shoppingList.removeChild(selectedItem);
+                });
+            } else {
+                // Se nenhum item estiver selecionado, remova apenas o item atual
+                const quantity = parseInt(listItem.querySelector(".quantity").textContent);
+                const totalItemPrice = itemPrice * quantity;
                 updateTotal(-totalItemPrice);
-                shoppingList.removeChild(selectedItem);
-            });
+                shoppingList.removeChild(listItem);
+            }
         });
     }
 });
