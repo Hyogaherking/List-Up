@@ -20,7 +20,7 @@ html, body {
     font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
-    height: 100%; /* Garante que o body e o html ocupem 100% da altura */
+    height: 100%; 
     overflow: hidden;
 }
 
@@ -34,9 +34,9 @@ body {
 #particles-js {
     position: absolute;
     width: 100%;
-    min-height: 100vh; /* Garante que o fundo cubra toda a altura da viewport */
+    min-height: 100vh; 
     background-color: var(--color-orange);
-    z-index: -1; /* Coloca o fundo de partículas atrás do conteúdo */
+    z-index: -1; 
 }
 
 header {
@@ -166,4 +166,74 @@ main {
     text-align: right;
     font-size: 18px;
     color: var(--color-dark-orange); 
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .app-container {
+        max-width: 350px;
+        padding: 15px;
+        height: auto;
+    }
+
+    header input[type="text"],
+    header input[type="number"],
+    #input-new-task {
+        width: 90%;
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    header button,
+    #btn-new-task {
+        width: 45px;
+        height: 45px;
+        font-size: 0.9rem;
+    }
+
+    .shopping-list li {
+        padding: 8px;
+    }
+
+    #total-container {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-container {
+        max-width: 300px;
+        padding: 10px;
+        height: auto;
+    }
+
+    header input[type="text"],
+    header input[type="number"],
+    #input-new-task {
+        width: 85%;
+        font-size: 0.8rem;
+        padding: 7px;
+    }
+
+    header button,
+    #btn-new-task {
+        width: 40px;
+        height: 40px;
+        font-size: 0.8rem;
+    }
+
+    .shopping-list li {
+        padding: 6px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .shopping-list li span {
+        padding-left: 0;
+        margin-top: 5px;
+    }
+
+    #total-container {
+        font-size: 14px;
+    }
 }
